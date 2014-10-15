@@ -1,6 +1,7 @@
 package com.example.user_login;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,7 +13,7 @@ import android.widget.EditText;
 
 public class UserLoginMainActivity extends ActionBarActivity {
 
-	private static final String LOGCAT="MainActivity";
+	private static final String LOGTAG="MainActivity";
 	EditText editLogin;
 	EditText editPassword;
 	UserLogin userLogin;
@@ -38,9 +39,20 @@ public class UserLoginMainActivity extends ActionBarActivity {
     		String login = editLogin.getText().toString();
     		String password = editPassword.getText().toString();
     		userLogin = new UserLogin(login, password);
-    		Log.i(LOGCAT, userLogin.toString());
+    		Log.i(LOGTAG, userLogin.toString());
+    		this.lanzarAccesoOk();
     	} catch (UserLoginException e){
-    		Log.e(LOGCAT, e.getMessage());
+    		Log.e(LOGTAG, e.getMessage());
+    	}
+    }
+    
+    public void lanzarAccesoOk(){
+    	try{
+    	Intent i = new Intent(this,UserLoginAccesoOkActivity());
+    	startActivity(i);
+    	
+    	}catch(Exception e){
+    		Log.e(LOGTAG, e.getMessage());
     	}
     }
     
