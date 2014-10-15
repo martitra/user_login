@@ -48,8 +48,8 @@ public class UserLoginMainActivity extends ActionBarActivity {
     
     public void lanzarAccesoOk(){
     	try{
-    	Intent i = new Intent(this,UserLoginAccesoOkActivity());
-    	startActivity(i);
+    	//Intent i = new Intent(this,UserLoginAccesoOkActivity());
+    	//startActivity(i);
     	
     	}catch(Exception e){
     		Log.e(LOGTAG, e.getMessage());
